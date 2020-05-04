@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auto-Bind Blacklist ByPass</title>
+<link href="webjars/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	<header>
+		<nav
+			class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" href="/">Auto-Bind Blacklist ByPass</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target=".navbar-collapse"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			<nav class="navbar navbar-expand-lg navbar-light"
+				style="background-color: #e3f2fd;">
+				<a class="navbar-brand" href="/">Home</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><a class="nav-link" href="#">Profile
+								<span class="sr-only">(current)</span>
+						</a></li>
+					</ul>
+				</div>
+			</nav>
+			<br />
+			<center>
+				<div class="row" style="position: relative; margin: auto;">
+					<div class="col-md-12">
+						<h2>Update Profile</h2>
+					</div>
+				</div>
+			</center>
+			<br />
+			<div style="width: 50%; margin: auto;">
+				<form action="/update" method="post">
+					<div class="form-group">
+						<label for="firstname">First & Last Name</label>
+						<div class="form-row">
+							<div class="col">
+								<input type="text" class="form-control" id="firstname"
+									name="firstname" th:value="${user.firstname}" />
+							</div>
+							<div class="col">
+								<input type="text" class="form-control" id="lastname"
+									name="lastname" th:value="${user.lastname}" />
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="age">Email</label> 
+							<input type="text"
+							class="form-control" id="Email" name="Email"
+							th:value="${user.email}" />
+					</div>
+					<div class="form-group">
+						<label for="bio">Short Bio</label>
+						<textarea class="form-control" id="bio" name="bio" th:text="${user.bio}"></textarea>
+					</div>
+					<div style="text-align: center;">
+						<button type="submit" class="btn btn-primary"
+							style="width: 200px;">Update</button>
+					</div>
+				</form>
+			</div>
+		</main>
+	</div>
+	<footer class="border-top footer text-muted">
+		<div class="container">Software Security Anti-Patterns &copy;
+			2020</div>
+	</footer>
+	<script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+	<script src="webjars/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
